@@ -1,0 +1,138 @@
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) translateX(10rem);
+    }
+}
+
+
+@keyframes logoTransfusion {
+    20% {
+        filter: hue-rotate(45deg) saturate(200%)
+    } 
+    40% {
+        filter: hue-rotate(90deg) saturate(200%)
+    }
+    60% {
+        filter: hue-rotate(120deg) saturate(200%)
+    }
+    80% {
+        filter: hue-rotate(150deg) saturate(200%)
+    }
+    100% {
+        filter: hue-rotate(150deg) saturate(200%) 
+    }
+}
+
+
+@keyframes basketMoving {
+    0% {
+        transform: translateY(100px);
+    }
+}
+
+
+@keyframes leftToRight {
+    0% { 
+        transform: translateX(-5rem);
+    }
+    50% {
+        
+        visibility: hidden;
+    }
+}
+
+
+@keyframes intro-1 {
+    0% {
+        opacity: 0;
+        transform: translateX(30%); 
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes intro-2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-30%); 
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes orangeComming {
+    0% {
+        opacity: 0;
+        transform: translateY(-40%)
+    }
+    25% {
+        transform: translateY(0%)
+    }
+    50% {
+        transform: translateX(-20%)rotate(-45deg);
+    }
+   
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes DeliveryMove {
+    0% {
+        opacity: 0;
+        transform: translateX(-70%);
+    }
+}
+
+@keyframes scrollMove {
+    0% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes phoneMove {
+    0% {
+        transform: rotate(-15deg);
+    }
+}
+
+@keyframes jumping {
+    50% {
+        transform: translateY(-1.5rem);
+    }
+ 
+}
+
+@keyframes letterComming {
+    0% {
+       transform: translate(-20rem);
+    }
+}
+
+@keyframes appearCart {
+    0% {
+        top:10rem;
+    }
+    100% {
+        
+    }
+}
+
+@keyframes discountMoving {
+    0% {
+        left:30%;
+        transform: rotate(360deg);
+    }
+    50% {
+        background-color:red;
+    }
+}

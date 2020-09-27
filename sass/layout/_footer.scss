@@ -1,0 +1,29 @@
+/* FOOTER STARTS HERE */
+footer {
+    background-color: $color-secondary;
+    .row {
+        align-items:center;
+        align-content: center;
+        .col {
+            align-self: center;
+            padding: 1rem;
+            p {
+                font-family: MontserratLight;
+                font-size: 1.3rem;  
+                margin:0;
+            }  
+            &:last-of-type {
+                text-align: right;
+                span {
+                    &:first-of-type {
+                        padding-right: 2rem;
+                        border-right: 2px solid #b1b1b0;
+                    }
+                    &:last-child {
+                        padding-left: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
+}

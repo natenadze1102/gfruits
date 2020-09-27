@@ -1,0 +1,216 @@
+/* HEADER STARTS HERE */
+header {
+    background-color: $color-white;
+    padding-top: 1.6rem;
+    .col {
+        p {
+            text-align: right;
+        }
+    }
+    /* LANGUAGE-CHANGE_BAR STARTS HERE */
+    .lang-change {
+        display: flex;
+        align-items: center;
+        img {
+            padding-right: .9rem;
+        }
+        span {
+            padding: 0 .5rem 0 1.8rem ;
+            font-size: 1.4rem;
+        }
+    }
+    .welcome-text {
+        font-size: 1.2rem;
+        align-self: center;
+    }
+    /* LANGUAGE-CHANGE_BAR ENDS HERE*/
+    /* LOGO_BAR STARTS HERE*/
+    .logo-bar {
+        margin:3.1rem 0rem;
+        .row {
+            align-items: center;
+          
+            .col:last-of-type {
+                text-align: right;
+            }
+            .col:nth-of-type(2) {
+                text-align: center;
+            }
+        }
+        .user-nav {
+            display: flex;
+            gap: 2.5rem;
+            a:not(:last-child) {
+                padding-right: 2.5rem;
+                border-right: 1px solid #dcdcdc;
+            }
+            a:last-of-type {
+                &:hover {
+                    transform: scale(1.4);
+                }
+            }
+            :hover {
+                transition: all .2s;
+                transform: scale(1.1);
+            }
+        }
+        .logo {      
+            img {
+                width: 10rem;
+                align-self:center;
+            }
+            &:hover {
+                animation-name: logoTransfusion;
+                animation-fill-mode: backwards;
+                animation-duration: 2s;
+                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                animation-iteration-count: infinite;
+            }   
+        }
+        .cart {
+            padding: 1rem 1.8rem 1rem 1.8rem;
+            border:1px solid #dcdcdc;
+            border-radius: 25px;
+            display: inline-block;
+            animation-name: basketMoving;
+            animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+            animation-duration: 1s;
+            animation-delay: .2s;
+            img {
+                width: 23px;
+                margin-right: 2.1rem;
+                display: none;
+            }
+            a {
+                font-family: MontserratSemibold;
+                font-size: 1.3rem;
+                color:#e7b0b0!important;
+                vertical-align: middle;
+            }
+            &:hover {
+                img {
+                    animation-name:leftToRight;            
+                    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+                    animation-duration: 1.0s;             
+                    animation-fill-mode: forwards;
+                    display: inline-block;
+                }
+            } 
+        }
+    }
+    /* LOGO-BAR ENDS HERE*/
+    /* NAVIGATION_BAR STARTS HERE*/
+    .navigation {
+        ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap:6.6rem;
+            font-family: MontserratSemibold;
+            font-size: 1.4rem;      
+            li {
+                a {
+                    display: inline-block;
+                    padding-bottom: .9rem;
+                    position: relative;
+                    &:after {
+                        content: ".";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        width: 0%;
+                        color: transparent;
+                        background: $color-primary;
+                        height: 1px;
+                        transition: all .5s;
+                    }
+                    &:hover {
+                        color:$color-primary!important;
+                        transform: translateY(-.9rem);
+                        transition: all .2s; 
+                        &:after {
+                            width: 100%;
+                        }   
+                    }
+                }  
+            }         
+        }  
+    }
+    /* NAVIGATION_BAR ENDS HERE*/
+    /* HEADER MAIN TEXT AND PICTURE STARTS HERE*/
+    .header__mainbar {
+        margin-top: 5rem;
+        background-color:$color-green-transp;
+        .row{
+            align-items: center;
+        }
+        .col:first-child {
+            display: flex;
+            flex-direction: column;
+            h1 {
+                font-family: MontserratExtrabold;
+                font-size: 4.5rem;
+                color:#424242;
+                line-height: 1.3;
+                padding-bottom: 3rem;
+                span {
+                    display: inline-block;
+                    
+                    &:first-of-type {
+                        padding: .5rem;
+                        background-color:orange;
+                        animation-name: intro-1;
+                        animation-duration: 1.5s;
+                        animation-fill-mode: forwards;
+                        animation-timing-function: ease-in-out;
+                        border-radius: 25px;
+                    }
+                    &:nth-of-type(2) {
+                        animation-name: intro-2;
+                        animation-duration: 1.5s;
+                        animation-fill-mode: forwards;
+                        animation-timing-function: ease-in;
+                    }
+                }
+            }
+            .header-price {
+                margin-bottom: 3rem;
+                display: inline-block!important;
+                span {
+                    display: inline-block;
+                    &:first-of-type {
+                        font-size: 2.4rem; 
+                    }
+                    &:nth-of-type(2),&:nth-of-type(3) {
+                        font-family: MontserratMedium;
+                        font-size: 4.5rem;
+                        color:#fe0000;
+                    }
+                    &:nth-of-type(2) {
+                        font-size: 2.5rem;
+                        text-align: start;
+                        vertical-align: text-bottom;
+                        padding-left: 1rem;
+                    }
+                }
+            }
+        }
+        .col:last-of-type {
+            div {
+              img {
+                    
+                    animation-name: orangeComming;
+                    animation-delay: 1.8s;
+                    animation-fill-mode: backwards;
+                    animation-duration: 2.5s;
+                &:last-of-type {
+                    display: none;
+                }
+              } 
+            }
+        }
+    }
+    /* HEADER MAIN TEXT AND PICTURE ENDS HERE*/
+}

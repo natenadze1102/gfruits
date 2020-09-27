@@ -1,0 +1,56 @@
+/* PULSE BUTTON */
+.btn {
+    padding: 2.0rem 5.6rem!important;
+    color:$color-white!important;
+    background-color: $color-primary!important;
+    border-radius: 50px!important;
+    font-size: 1.8rem!important;
+    transition: .2s;
+
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 100px;
+        transition: all .2s;
+        position: relative;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        &:after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &-green {
+        background-color: $color-primary;
+
+        &:after {
+            background-color: rgba(92, 166, 22, 0.692);
+        }
+    }
+    &:after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+    &-animated {
+        animation: moveInBottom 5s ease-out;
+        animation-fill-mode: backwards;
+    }
+} 

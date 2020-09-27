@@ -1,0 +1,13 @@
+/* CUSTOM SCROLLBAR */
+
+body::-webkit-scrollbar {
+    width: 20px;               /* width of the entire scrollbar */  
+  }
+body::-webkit-scrollbar-track {
+background: #cdddd1;        /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+background-color: $color-secondary;    /* color of the scroll thumb */
+border-radius: 5px;       /* roundness of the scroll thumb */
+border: 1px solid orange;  /* creates padding around scroll thumb */
+}

@@ -1,0 +1,12 @@
+/* Asteriscs STARTS HERE*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none !important;
+  text-decoration: none !important;
+}
+
+a {
+  color: inherit !important;
+}
+/*# sourceMappingURL=reset.css.map */

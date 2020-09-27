@@ -1,0 +1,36 @@
+/* LEAF BLOCK */
+.leaf-container {
+    position: relative;
+    margin:7.8rem 0 5.6rem 0;
+      &__box {
+          position: absolute;
+          left: 50%;
+          span {
+              position: absolute;
+              width: 6rem;
+              height: 1px;
+              &:first-of-type {
+                  background-color: $color-primary;
+                  right:5.5rem;
+                  top: 50%;
+              }
+              &:last-of-type {
+                  width: 6rem;
+                  height: 1px;
+                  background-color: $color-primary;
+                  left:4.5rem;
+                  top: 50%;
+              }
+          }
+      }
+      &--text {
+          font-family: MontserratMedium;
+          font-size: 3.2rem;
+          color:$color-primary;
+          padding-top: 5.5rem;
+          transform: translateX(1rem);
+      }
+      h2 {
+        text-align: center;
+    }
+  }

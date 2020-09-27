@@ -1,0 +1,21 @@
+.cart {
+    display: flex;
+    justify-self: left;
+    padding-top: 3.5rem;
+    &__itemsBlock {
+        border: 1px solid #989898;
+        height: 100%!important;
+        img {
+            height: 100%;
+            padding: 1.4rem;
+            
+            &:first-of-type {
+                max-width: 4.8rem;
+            }
+            &:not(:first-of-type) {
+                transform: scale(1.05);
+                border-left: 1px solid #989898;
+            }
+        }
+    }
+}

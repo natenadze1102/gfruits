@@ -1,0 +1,57 @@
+/* Google Fonts : 'Montserrat (light,regular,medium,semibold,bold,extrabold) START HERE*/
+@font-face {
+    font-family: MontserratLight;
+    src: 
+        url('/fonts/google/Montserrat-Light.woff2') format('woff2');
+  }
+
+@font-face {
+    font-family: MontserratRegular;
+    src: 
+        url('/fonts/google/Montserrat-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: MontserratMedium;
+    src: 
+        url('/fonts/google/Montserrat-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: MontserratSemibold;
+    src: 
+        url('/fonts/google/Montserrat-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: MontserratBold;
+    src: 
+        url('/fonts/google/Montserrat-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: MontserratExtrabold;
+    src: 
+        url('/fonts/google/Montserrat-ExtraBold.woff2') format('woff2');
+}
+
+/*  Google Fonts : 'Montserrat (light,regular,medium,semibold,bold,extrabold) END HERE*/
+/* COLORS */
+
+/* BOOTSTRAP-PLUGIN DISABLES */
+.card {
+    border:none!important;
+}
+/* / BOOTSTRAP-PLUGIN DISABLES */
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    ::selection {       //FONT COLOR WHEN WE SELECT THE TEXT
+        background-color: lavender;
+    }
+}
+
+body {
+    font-family: 'MontserratRegular', sans-serif!important;
+}
