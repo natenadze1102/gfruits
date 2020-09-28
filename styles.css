@@ -371,7 +371,7 @@
 
 /* FLIPPING CARDS */
 .scene {
-  width: 390px;
+  /* width: 390px; */
   -webkit-perspective: 600px;
           perspective: 600px;
 }
