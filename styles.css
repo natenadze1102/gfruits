@@ -1106,10 +1106,6 @@ header .header__mainbar .col:last-of-type div img {
           animation-duration: 2.5s;
 }
 
-header .header__mainbar .col:last-of-type div img:last-of-type {
-  display: none;
-}
-
 /* FOOTER STARTS HERE */
 footer {
   background-color: #f8f8f6;
