@@ -8,9 +8,23 @@
         img {
             height: 100%;
             padding: 1.4rem;
-            
+            transition: .2s;
+            &:hover {
+                background: #6DD47E;
+                transform: scale(1.06);
+               &:first-of-type {
+                    background: #c1f294;
+               }
+                &:nth-of-type(2) {
+                    background: #00154F;                   
+                }
+                &:last-of-type {
+                    background: #F4AF1B;
+                }
+            }
             &:first-of-type {
                 max-width: 4.8rem;
+                /* transform: translateY(-.1rem); */
             }
             &:not(:first-of-type) {
                 transform: scale(1.05);
