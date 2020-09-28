@@ -1459,6 +1459,11 @@ img {
   padding: 10rem 0;
 }
 
+.product-list .product-list__imgcontainer img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 /* PRODUCTS PICTURES IN ROW END HERE */
 /* SUBSCRIBE SECTION STARTS HERE */
 .subscribe {

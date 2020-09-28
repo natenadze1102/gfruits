@@ -244,6 +244,12 @@
 /* PRODUCTS PICTURES IN ROW START HERE */
 .product-list {
     padding: 10rem 0;
+    .product-list__imgcontainer {
+        img {
+            object-fit: cover;
+        }
+    }
+   
 }
 /* PRODUCTS PICTURES IN ROW END HERE */
 /* SUBSCRIBE SECTION STARTS HERE */
