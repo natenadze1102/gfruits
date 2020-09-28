@@ -1137,8 +1137,8 @@ header .header__mainbar .col:first-child .header-price span:nth-of-type(2) {
 header .header__mainbar .col:last-of-type div img {
   -webkit-animation-name: orangeComming;
           animation-name: orangeComming;
-  -webkit-animation-delay: 1.8s;
-          animation-delay: 1.8s;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
   -webkit-animation-duration: 2.5s;
