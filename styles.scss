@@ -1,4 +1,5 @@
 @import "sass/abstracts/variables";
+@import "sass/abstracts/mixins";
 @import "sass/base/animations";
 @import "sass/components/slider";
 @import "sass/components/flipping-cards";
@@ -11,10 +12,10 @@
 @import "sass/components/days";
 @import "sass/components/product-container";
 @import "sass/reset.scss";
-@import "sass/layout/header+nav";
 @import "sass/layout/footer";
 @import "sass/pages/main";
 @import "sass/base/base";
+@import "sass/layout/header+nav";
 
 .backtotop {
     max-width: 25px;
