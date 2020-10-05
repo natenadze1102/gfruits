@@ -383,7 +383,7 @@ header {
             @include respond(tab-port-md) {
                 transform: scale(52);
             }
-            @include respond(tab-port-md) {
+            @include respond(phone) {
                 transform: scale(42);
             }
             @include respond(phone-md) {

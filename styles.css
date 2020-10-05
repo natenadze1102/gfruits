@@ -2449,7 +2449,7 @@ header .burger-section .btn-change {
   }
 }
 
-@media only screen and (max-width: 48rem) {
+@media only screen and (max-width: 37.5rem) {
   header .burger-section .btn-change {
     -webkit-transform: scale(42);
             transform: scale(42);
