@@ -452,6 +452,10 @@
   top: 0;
 }
 
+.scene .cards__face--back .btn {
+  background-color: transparent !important;
+}
+
 .scene .cards__face--back .price-container {
   text-align: center;
   -webkit-transform: translateY(75%);
@@ -1615,7 +1619,7 @@ footer .row .col:last-of-type span:last-child {
   font-family: MontserratBold;
   font-size: 1.7rem !important;
   border: 2px solid white;
-  background-color: transparent !important;
+  background-color: transparent;
   padding: 2rem 3.7rem !important;
   text-transform: uppercase;
   -webkit-transition: .2s;

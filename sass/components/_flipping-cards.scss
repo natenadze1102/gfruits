@@ -21,9 +21,13 @@
                     position: absolute;
                     top:0;
                     
+                    .btn {
+                        background-color: transparent!important;
+                    }
+                    
                     .price-container {
                         text-align: center;
-                        transform: translateY(50%);
+                        transform: translateY(75%);
                     }
                 }
             }

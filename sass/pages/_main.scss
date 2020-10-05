@@ -26,16 +26,16 @@
                     animation-name: DeliveryMove;
                     animation-duration: .7s;
                     animation-fill-mode: backwards;
-                    animation-timing-function: ease-in-out;
+                    animation-timing-function: ease-in;
                 }
             }
             &:nth-of-type(2) {
                 img {
                     animation-name: scrollMove;
-                    animation-duration: .5s;
+                    animation-duration: .9s;
                     animation-fill-mode: forwards;
-                    animation-timing-function: ease-in-out;
-                  
+                    animation-timing-function: ease-in;
+                    animation-iteration-count: infinite;
                 }
             }
             &:last-of-type {
@@ -47,6 +47,39 @@
                 }
             }
         }
+        &:first-of-type {
+            img {
+                @include respond(tab-port) {
+                    max-width: 5rem;
+                }
+            }
+           
+        }
+        &:not(:first-of-type) {
+            img {
+                @include respond(tab-port) {
+                    max-width: 3.3rem;
+                }
+            }
+        }
+        span {
+            @include respond(tab-port) {
+                &:first-of-type {
+                    font-size:1.5rem;
+                }
+                &:last-of-type {
+                    font-size:1rem;
+                }
+            } 
+            @include respond(phone-md) {
+                &:first-of-type {
+                    font-size:1.2rem;
+                }
+                &:last-of-type {
+                    font-size:.9rem;
+                }
+            } 
+        }
     }
     
 }
@@ -54,6 +87,12 @@
 /* BEST SELLERS PRODUCTS SECTION STARTS HERE */
 .best-products {
     background-color: $color-secondary;
+    .product-container {
+        @include respond(phone-md) {
+            box-shadow:none!important;  
+        }
+    }
+    
 }
 /* BEST SELLERS PRODUCTS SECTION ENDS HERE */
 /* FEATURES PRODUCTS SECTION STARTS HERE */
@@ -61,7 +100,12 @@
     background-color: $color-secondary;
     .row {
         text-align: center;
-
+        @include respond(tab-port) {
+            flex-direction: column;
+            .honey {
+                width:350px;
+            }
+        }
         .honey {
             transition: .3s;
             &:hover {
@@ -70,18 +114,67 @@
         }
     }
     .featureds-products-description {
+        .price-container {
+            @include respond(tab-port) {
+                text-align: center;
+            }
+        }
         p {
             text-align: left;
             padding-top: 4rem;
             border-top: 1px solid #e0e0e0;
             font-size: 1.4rem;
         }
+        .cart {
+            display: inline-block;
+        }
     }
 }    
 /* FEATURES PRODUCTS SECTION ENDS HERE */
 /* DAILY DEAL SECTION STARTS HERE */
 .d-deal {
-    background-color: $color-secondary;  
+    background-color: $color-secondary;
+    .container {
+        position: relative;
+        .row:nth-of-type(2) {
+                .col {
+                    &:first-of-type {
+                        @include respond(tab-land) {
+                            position: absolute;
+                            top:18rem;
+                            max-width: 100%;
+                            transform: scale(.9);
+                            .days-container {
+                                position: absolute;
+                                flex-direction: row;
+                            }
+                        }
+                        @include respond(phone-md) {
+                           transform: scale(.6);
+                        }
+                    }
+                }
+        }  
+        .product-container {
+            @include respond(tab-land) {
+                margin-top:5rem;
+                justify-content: center;
+
+                &__img {
+                    text-align: center;
+                }
+                &__estprice {
+                    text-align: center;
+                }
+            }
+        }
+        .col {
+            @include respond(tab-land) {
+                display: flex!important;
+                justify-content: center!important;
+            }
+        }
+    }
 }
 /* DAILY DEAL SECTION ENDS HERE */
 /* BLOG SECTION STARTS HERE */
@@ -92,6 +185,9 @@
             display:flex;
             justify-content: center;
         }
+        @include respond(phone-md) {
+            flex-direction: column;
+        }
     }
     .blog-container {
         padding-bottom:2rem;
@@ -100,6 +196,9 @@
         .blog-img {
             img {
                 max-height: 280px;
+                @include respond (phone-md) {
+                    max-width: 100%;
+                }
             }
            
         }
@@ -132,13 +231,20 @@
                 }
             }    
         }
-    }
-    
+        .btn {
+            @include respond(phone-md) {
+                font-size: 1.3rem!important;
+                padding: 1.5rem 3rem !important;
+            }
+        }
+        
+    }   
 }
 /* BLOG SECTION ENDS HERE */
 /* QUALITY SECTION STARTS HERE */
 .quality {
     margin-bottom: 7rem;
+    
     &-container {
         * {
             text-align: center;
@@ -170,6 +276,29 @@
             }
         }
     }
+    .col {
+        &:first-of-type {
+            img {
+                max-width: 23px;
+            }
+        }
+    
+        &:nth-of-type(2) {
+            img {
+                max-width: 28px;
+            }
+        }
+    
+        &:nth-of-type(3) {
+            img {
+                max-width: 33px;
+            }
+        }
+
+        @include respond(phone) {
+            flex-basis: 100%;
+        }
+    }
 }
 /* QUALITY SECTION ENDS HERE */
 /* TESTIMONIALS START HERE */
@@ -181,10 +310,26 @@
     .carousel-control-next-icon {
         background-size: 100%, 100%;
         background-image: none;
+        @include respond(phone) {
+            transform: scale(.5);
+        }
     }
     .carousel-control-prev,
     .carousel-control-next {
         width: 0;
+    }
+    .carousel-control {
+        &-prev {
+            @include respond(phone) {
+                left:5%;
+            }
+        }
+        &-next {
+            @include respond(phone) {
+                right:5%;
+            }
+        }
+       
     }
     .carousel-control-next-icon:after
     {
@@ -210,7 +355,20 @@
                 justify-content: center;
                 align-items: center;
                 box-shadow: 0px 0px 0px 2.5px #7db846;
-                Copy Text
+                @include respond (tab-port) {
+                   transform: scale(.75);
+                }
+                @include respond (phone) {
+                    transform: scale(.5);
+                }
+                @include respond (phone-md) {
+                    &:first-of-type,&:last-of-type {
+                        display: none;
+                    }
+                    &:nth-of-type(2) {
+                        transform: scale(0.9);
+                    }
+                }
                 img {
                    margin-left: 3rem;
                 }   
@@ -226,7 +384,10 @@
             margin: 5.8rem 0 6.1rem 0;
             transition: .7s;
             opacity: 1;
-           
+            padding: 0 5rem;
+            @include respond (tab-port) {
+                font-size: 1.3rem;
+             }
         }
         span {
             font-family: MontserratMedium;
@@ -234,7 +395,9 @@
             transition: .3s;
             display: inline-block;
             &:hover {
-                transform: scale(1.4);
+                @media only screen and (min-width:900px) {
+                    transform: scale(1.4);
+                }
                 color:$color-primary;
             }
         }
@@ -247,9 +410,16 @@
     .product-list__imgcontainer {
         img {
             object-fit: cover;
+            width: 17rem;
         }
     }
-   
+    .col {
+        @include respond (tab-port) {
+            /*  flex-basis: 100%; */
+            display: flex;
+            justify-content: center;
+        }
+    }
 }
 /* PRODUCTS PICTURES IN ROW END HERE */
 /* SUBSCRIBE SECTION STARTS HERE */
@@ -269,8 +439,15 @@
         align-items: center;
             .letter {
                 display: flex;
+                padding-bottom: 3rem;
                 img {
                     transform: rotate(-45deg);
+                    @include respond(phone) {
+                        max-height: 4.5rem;
+                    }
+                    @include respond(phone-md) {
+                        max-height: 3.7rem;
+                    }
                 }
                 &__text {
                     align-self:center;
@@ -278,15 +455,28 @@
                         &:first-of-type {
                             font-size: 2.4rem;
                             margin: 0 1rem 0 3rem;
+                            @include respond(phone-md) {
+                                font-size:1.5rem!important;
+                                margin-left:1rem;
+                            }
+                            @include respond(phone-sm) {
+                                font-size:1.3rem!important;
+                                margin-left:1rem;
+                            }
                         }
                         &:last-of-type {
                             font-family: MontserratSemibold;
-                            font-size: 2.8rem;
-                        }
+                            font-size: 2.6rem;
+                            @include respond(phone-md) {
+                                font-size:2rem!important;
+                            }
+                            @include respond(phone-sm) {
+                                font-size:1.8rem!important;
+                            }
+                        }           
                     }
                 }
             }
-        
         form {
             margin:1rem 2rem 1rem 2.7rem;
             border:none!important;
@@ -299,18 +489,29 @@
                 height: 6.4rem;
                 border: none;
                 padding-left: 2.5rem;
+
+                @include respond(phone) {
+                    width: 30rem;
+                }
+                @include respond(phone-md) {
+                    width: 25rem;
+                }
+                @include respond(phone-sm) {
+                    width: 23rem;
+                }
                 &:focus {
-                
                     outline:0;
                 }
             }
         }
     }
+}
+
     .btn {
         font-family: MontserratBold;
         font-size:1.7rem!important;
         border:2px solid white;
-        background-color: transparent!important;
+        background-color: transparent;
         padding: 2rem 3.7rem!important;
         text-transform: uppercase;
         transition: .2s;
@@ -322,7 +523,7 @@
             }
         }
     }
-}
+
 /* SUBSCRIBE SECTION ENDS HERE */
 /* CONTACT INFORMATIN SECTION STARTS HERE */
 .contact-information {
@@ -330,6 +531,18 @@
     .col {
         display: flex;
         justify-content: center;
+
+        @include respond(tab-port-md) {
+            &:nth-of-type(3) {
+                flex-basis: 100%;
+            }
+        }
+        @include respond(phone-md){
+            &:nth-of-type(2) {
+                justify-content: flex-start;
+            }
+        }
+       
     }
     .row {
         &:first-child {
@@ -338,9 +551,17 @@
         h2 {
             font-family: MontserratSemibold;
             font-size: 1.8rem;
-            margin-bottom: 5rem!important;         
+            margin-bottom: 5rem!important; 
+            @include respond(phone-md) {
+                margin-bottom: 3rem!important;
+            }        
         }
         .about-us {  
+            img {
+                @include respond(phone-md) {
+                    max-height: 12rem;
+                }
+            }
             p {
                 font-size: 1.2rem;
                 color:#9d9c9c;
@@ -352,13 +573,24 @@
             a {
                 margin-bottom: 2.6rem;
                 font-size: 1.4rem;
+                
+                @include respond(phone-md) {
+                    margin-bottom: 1.5rem;
+                    font-size: 1.2rem;
+                }
             }
         }
         .our-insta {
             img {
                 &:nth-of-type(2) {
                     transform: scale(.69) translateY(-1.2rem);
+                    @include respond(phone-md) {
+                        transform: scale(.5);
+                    }
                 }  
+                @include respond(phone-md) {
+                    transform: scale(.8);
+                }
             }
         }
         .contact-us {
@@ -384,14 +616,29 @@
              .col {
                  &:first-of-type {
                      justify-content: flex-start;
+                     @include respond(tab-port-md){
+                        padding-bottom: 1.5rem;
+                    }
+                    @include respond(phone-md) {
+                        justify-content: flex-start!important;
+                    } 
                  }
                  &:last-of-type {
                      justify-content: flex-end;
-                 }   
+                 } 
+                @include respond(tab-port-md) {
+                    justify-content: center!important;
+                }  
+                @include respond(phone-md) {
+                    justify-content: flex-start!important;
+                } 
              }
              span {
                  font-family: MontserratSemibold;
                  font-size: 1.8rem;
+                 @include respond(phone-md) {
+                    font-size: 1.3rem;
+                 }
              }
              .follow-us {
                  display: flex;
@@ -411,6 +658,15 @@
                  display: flex;
                  gap:1.7rem;
                  align-items:center;
+
+                @include respond(phone-md) {
+                    gap:1.2rem;
+
+                    img {
+                        transform: scale(.9);
+                    }
+                }
+
              }
          }  
     }

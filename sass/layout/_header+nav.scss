@@ -1,5 +1,13 @@
 /* HEADER STARTS HERE */
 header {
+    .header-fixed {
+        position: fixed;
+        width: 100%;
+        background: #f9f9f9;
+        z-index: 100;
+        top: 0;
+        padding: 1rem;
+    }
     background-color: $color-white;
     padding-top: 1.6rem;
     .col {
@@ -18,10 +26,17 @@ header {
             padding: 0 .5rem 0 1.8rem ;
             font-size: 1.4rem;
         }
+        @include respond(tab-port) {
+            display: none;
+         }
     }
     .welcome-text {
         font-size: 1.2rem;
         align-self: center;
+
+        @include respond(tab-port) {
+           display: none;
+        }
     }
     /* LANGUAGE-CHANGE_BAR ENDS HERE*/
     /* LOGO_BAR STARTS HERE*/
@@ -29,7 +44,7 @@ header {
         margin:3.1rem 0rem;
         .row {
             align-items: center;
-          
+            
             .col:last-of-type {
                 text-align: right;
             }
@@ -53,8 +68,12 @@ header {
                 transition: all .2s;
                 transform: scale(1.1);
             }
+            @include respond(tab-port) {
+                display: none;
+            }
         }
         .logo {      
+            text-align: center;
             img {
                 width: 10rem;
                 align-self:center;
@@ -80,26 +99,65 @@ header {
                 width: 23px;
                 margin-right: 2.1rem;
                 display: none;
+                @include respond(phone-md) {
+                    display: none;
+                } 
             }
             a {
                 font-family: MontserratSemibold;
                 font-size: 1.3rem;
                 color:#e7b0b0!important;
                 vertical-align: middle;
+                @include respond(phone-md) {
+                    display: none;
+                } 
+            }
+            .in-shopping-cart {
+                display: none;
+                position: relative;
+                img {
+                    display: none; 
+                }
+               
+                @include respond(phone-md) {
+                    display: block!important;
+                    border:none;
+                    img {
+                        display: block!important;
+                        margin: 0!important;
+                        min-width:3rem;
+                    }
+                    span {
+                        position: absolute;
+                        top:-1rem;
+                        color: #ffa500;
+                        font-size: 1.5rem;
+                    }
+                } 
             }
             &:hover {
-                img {
-                    animation-name:leftToRight;            
-                    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
-                    animation-duration: 1.0s;             
-                    animation-fill-mode: forwards;
-                    display: inline-block;
-                }
+                @media only screen and (min-width:900px) {
+                    >img {
+                        animation-name:leftToRight;            
+                        animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+                        animation-duration: 1.0s;             
+                        animation-fill-mode: forwards;
+                        display: inline-block;
+                    }
+                } 
             } 
+            @include respond(phone-md) {
+                border:none;
+            }
+        }
+        @include respond(tab-port) {
+            margin:0;
         }
     }
     /* LOGO-BAR ENDS HERE*/
+
     /* NAVIGATION_BAR STARTS HERE*/
+
     .navigation {
         ul {
             display: flex;
@@ -107,12 +165,13 @@ header {
             flex-wrap: wrap;
             gap:6.6rem;
             font-family: MontserratSemibold;
-            font-size: 1.4rem;      
+            font-size: 1.4rem;     
             li {
                 a {
                     display: inline-block;
                     padding-bottom: .9rem;
                     position: relative;
+                    transition: .5s;
                     &:after {
                         content: ".";
                         position: absolute;
@@ -137,11 +196,17 @@ header {
                 }  
             }         
         }  
+        @include respond(tab-port) {
+            display: none;
+        }
     }
+
     /* NAVIGATION_BAR ENDS HERE*/
+
+
     /* HEADER MAIN TEXT AND PICTURE STARTS HERE*/
     .header__mainbar {
-        margin-top: 5rem;
+       padding-top: 20rem;
         background-color:$color-green-transp;
         .row{
             align-items: center;
@@ -155,6 +220,9 @@ header {
                 color:#424242;
                 line-height: 1.3;
                 padding-bottom: 3rem;
+                @include respond(tab-port) {
+                    padding-bottom: 1.5rem;
+                }
                 span {
                     display: inline-block;
                     
@@ -174,33 +242,53 @@ header {
                         animation-timing-function: ease-in;
                     }
                 }
+                @include respond(tab-port) {
+                    font-size: 2.3rem;
+                }
+                @include respond(phone-md) {
+                    font-size: 1.4rem;
+                }
             }
             .header-price {
-                margin-bottom: 3rem;
+                padding-bottom: 3rem;
                 display: inline-block!important;
                 span {
                     display: inline-block;
                     &:first-of-type {
                         font-size: 2.4rem; 
+                        @include respond(tab-port) {
+                            font-size: 1.3rem;
+                        }
                     }
                     &:nth-of-type(2),&:nth-of-type(3) {
                         font-family: MontserratMedium;
                         font-size: 4.5rem;
                         color:#fe0000;
+                        @include respond(tab-port) {
+                            font-size: 2.3rem;
+                        }
+                        @include respond(phone-md) {
+                            font-size: 1.8rem;
+                        }
                     }
                     &:nth-of-type(2) {
                         font-size: 2.5rem;
                         text-align: start;
                         vertical-align: text-bottom;
                         padding-left: 1rem;
+                        @include respond(tab-port) {
+                            font-size: 1.3rem;
+                        }
                     }
+                }
+                @include respond(tab-port) {
+                    padding-bottom: 1.5rem;
                 }
             }
         }
         .col:last-of-type {
             div {
               img {
-                    
                     animation-name: orangeComming;
                     animation-delay: 1.2s;
                     animation-fill-mode: backwards;
@@ -208,6 +296,121 @@ header {
               } 
             }
         }
+        .btn {
+            @include respond(tab-port) {
+                font-size:1rem!important;
+                padding: 1rem 2.6rem !important;
+            }
+        }
+        @include respond(tab-port) {
+            padding-top: 7rem;
+            padding-bottom: 5rem;
+        }
     }
     /* HEADER MAIN TEXT AND PICTURE ENDS HERE*/
+
+
+    /* BURGER NAV-MENU STARTS HERE */
+
+    .burger-section {
+        position: fixed;
+        top:1%;
+        left:0;
+        width: 100%;
+        z-index: 40;
+        transition: .5s;
+        display: none;
+
+        &__btn {
+            position: absolute;
+            padding: 2rem;
+            width: 3rem;
+            
+            div {
+                position: absolute;
+                left:1.6rem;
+                width: 3.5rem;
+                height: 5px;
+                background-color: ORANGE;
+                z-index: 100;
+                transition: .5s;
+                cursor: pointer;
+                &:first-of-type {
+                    top:2rem;   
+                }
+                &:nth-of-type(2) {
+                    top:3rem;        
+                }         
+                &:last-of-type {  
+                  top:4rem;
+                }
+            }   
+        }
+        /* CHANGE BURGER-MENU BUTTON STARTS HERE */
+        .change {
+            div {
+                &:first-of-type {
+                    transform: translate(1px, 8px) rotate(-45deg);
+                }
+                &:nth-of-type(2) {
+                    transform: translate(2px, -3px) rotate(45deg);
+                }
+                &:last-of-type {
+                    display: none;
+                }
+            }
+        }
+         /* CHANGE BURGER-MENU BUTTON ENDS HERE*/
+
+        .btn-cover {
+            position: absolute;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            z-index: -19;
+            transition: all 1s cubic-bezier(0.83, 0, 0.17, 1);
+        }
+        .btn-change {
+           transform: scale(210);
+            background-color: rgba(245, 191, 92, 0.897);
+        }
+        .row {
+            .col {
+                ul {
+                    flex-direction: column;
+                    gap:1rem;
+                    height: 100vh;
+                    
+                    li {
+                        padding: 0 1rem;
+                        align-self:center;
+                        font-size: 5vh;
+                    }
+                }
+            }
+        }
+        @include respond(tab-port) {
+            display: block;
+         }
+    }
+
+    .nav-toggle {
+        animation-name:toggleNavAppear;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0,-0.2,.5,1.51);
+    }
+    
+    .nav-toggle-dissapear {
+        animation-name:toggleNavDissapear;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0,-0.2,.5,1.51);
+    }
+    
+    .nav-list {
+        display:none;
+    }
+    
+     /* BURGER NAV-MENU ENDS HERE */
 }

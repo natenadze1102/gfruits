@@ -1,16 +1,66 @@
-/* FLIPPING CARDS */
-var cardFirst = document.querySelector('.cards');
+
+
+/* RESPONSIVE PAGE NAVIGATION USING BURGER MENU STARTS HERE*/
+let btnToggle = document.querySelector('.burg-button');
+let toggleNav = document.querySelector('.nav-toggle');
+let navigation = document.querySelector('.navigation')
+
+let navList = document.querySelector('.nav-list');
+let coverAll = document.querySelector('.btn-cover');
+let btnChange = document.querySelector('.btn-change');
+
+/* CHANGE BURGER_MENU BOTTON ON CLICK */
+btnToggle.addEventListener('click',function() {
+  btnToggle.classList.toggle('change');
+})
+
+/* OPEN TOGGLE NAVIGATION LIST MENU */
+toggleNav.style.display = 'none'
+btnToggle.addEventListener('click',function() {  
+  if(toggleNav.style.display == 'none') {
+    toggleNav.style.display = 'block'
+    setTimeout(function() {
+    },800)
+/* CLOSE TOGGLE NAVIGATION LIST MENU */ 
+    toggleNav.classList.remove('nav-toggle-dissapear')
+  } else if(toggleNav.style.display == 'block') {
+    toggleNav.classList.add('nav-toggle-dissapear')
+    setTimeout(function() {
+      toggleNav.style.display = 'none'
+    },800)
+    
+  }
+})
+
+
+/* EXTENDING SPOT WHICH COVERS ALL PAGE */
+btnToggle.addEventListener('click',function() {
+  coverAll.classList.toggle('btn-change');
+})
+
+
+
+/* RESPONSIVE PAGE NAVIGATION USING BURGER MENU ENDS HERE*/
+
+
+
+
+/* FLIPPING CARDS START HERE */
+
+const cardFirst = document.querySelector('.cards');
 cardFirst.addEventListener( 'click', function() {
   cardFirst.classList.toggle('is-flipped');
 });
 
-var cardSecond = document.querySelector('.cards-1');
+const cardSecond = document.querySelector('.cards-1');
 cardSecond.addEventListener( 'click', function() {
     cardSecond.classList.toggle('is-flipped-1');
-});
+}); 
+
+/* FLIPPING CARDS END HERE */
 
 
-/* SLIDER */
+/* SLIDER STARTS HERE*/
 $(document).ready(function() {
   $('.slider').slick({
     arrows:true,
@@ -32,7 +82,7 @@ $(document).ready(function() {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
@@ -55,26 +105,5 @@ $(document).ready(function() {
     ]
   });
 });
-/* AOS SCRIPT ( ANIMATION ON SCROLL) */
-AOS.init({
-  // Global settings:
-  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-  startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-  initClassName: 'aos-init', // class applied after initialization
-  animatedClassName: 'aos-animate', // class applied on animation
-  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-  
 
-  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-  offset: 150, // offset (in px) from the original trigger point
-  delay: 0, // values from 0 to 3000, with step 50ms
-  duration: 400, // values from 0 to 3000, with step 50ms
-  easing: 'ease', // default easing for AOS animations
-  once: false, // whether animation should happen only once - while scrolling down
-  mirror: false, // whether elements should animate out while scrolling past them
-  anchorPlacement: 'top-center', // defines which position of the element regarding to window should trigger the animation
-
-});
+/* SLIDER ENDS HERE*/
