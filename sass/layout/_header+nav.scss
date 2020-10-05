@@ -371,7 +371,28 @@ header {
             transition: all 1s cubic-bezier(0.83, 0, 0.17, 1);
         }
         .btn-change {
-           transform: scale(210);
+            @include respond(big-desktop) {
+                transform: scale(200);
+            }
+            @include respond(tab-land) {
+                transform: scale(85);
+            }
+            @include respond(tab-port) {
+                transform: scale(60);
+            }
+            @include respond(tab-port-md) {
+                transform: scale(52);
+            }
+            @include respond(tab-port-md) {
+                transform: scale(42);
+            }
+            @include respond(phone-md) {
+                transform: scale(33);
+            }
+            @include respond(phone-sm) {
+                transform: scale(26);
+            }
+           
             background-color: rgba(245, 191, 92, 0.897);
         }
         .row {

@@ -2418,9 +2418,56 @@ header .burger-section .btn-cover {
 }
 
 header .burger-section .btn-change {
-  -webkit-transform: scale(210);
-          transform: scale(210);
   background-color: rgba(245, 191, 92, 0.897);
+}
+
+@media only screen and (min-width: 112.5rem) {
+  header .burger-section .btn-change {
+    -webkit-transform: scale(200);
+            transform: scale(200);
+  }
+}
+
+@media only screen and (max-width: 75rem) {
+  header .burger-section .btn-change {
+    -webkit-transform: scale(85);
+            transform: scale(85);
+  }
+}
+
+@media only screen and (max-width: 56.25rem) {
+  header .burger-section .btn-change {
+    -webkit-transform: scale(60);
+            transform: scale(60);
+  }
+}
+
+@media only screen and (max-width: 48rem) {
+  header .burger-section .btn-change {
+    -webkit-transform: scale(52);
+            transform: scale(52);
+  }
+}
+
+@media only screen and (max-width: 48rem) {
+  header .burger-section .btn-change {
+    -webkit-transform: scale(42);
+            transform: scale(42);
+  }
+}
+
+@media only screen and (max-width: 28.125rem) {
+  header .burger-section .btn-change {
+    -webkit-transform: scale(33);
+            transform: scale(33);
+  }
+}
+
+@media only screen and (max-width: 18.75rem) {
+  header .burger-section .btn-change {
+    -webkit-transform: scale(26);
+            transform: scale(26);
+  }
 }
 
 header .burger-section .row .col ul {
