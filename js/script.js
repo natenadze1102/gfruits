@@ -1,5 +1,3 @@
-
-
 /* RESPONSIVE PAGE NAVIGATION USING BURGER MENU STARTS HERE*/
 let btnToggle = document.querySelector('.burg-button');
 let toggleNav = document.querySelector('.nav-toggle');

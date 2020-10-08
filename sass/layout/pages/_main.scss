@@ -311,6 +311,12 @@
             margin:1rem 2rem 1rem 2.7rem;
             border:none!important;
             outline: none!important;
+            
+            .btn {
+                @include respond(tab-port-md) {
+                    margin-top: 3rem;
+                }
+            }
             input {
                 border-radius: 50px;
                 font-size: 1.4rem;
@@ -324,7 +330,6 @@
                     max-width: 30rem;
                 }
                 &:focus {
-                
                     outline:0;
                 }
             }

@@ -23,6 +23,7 @@
         &:after {
             transform: scaleX(1.4) scaleY(1.6);
             opacity: 0;
+            border-radius: 100px;
         }
     }
     &:active {
